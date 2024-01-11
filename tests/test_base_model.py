@@ -7,11 +7,11 @@ Unittests classes:
     TestBaseModel_to_dict
 """
 import os
-import models
+#import models
 import unittest
 from datetime import datetime
 from time import sleep
-from models.base_model import BaseModel
+#from models.base_model import BaseModel
 
 class TestBaseModel_instantiation(unittest.TestCase):
     """unittests for BaseModel instantion tests"""
@@ -83,4 +83,4 @@ class TestBaseModel_instantiation(unittest.TestCase):
         self.assertEqual(bm.created_at, dt)
         self.assertEqual(bm.updated_at, dt)
 if __name__ == "__main__":
-    os.unlink.main()
+    unittest.main()
