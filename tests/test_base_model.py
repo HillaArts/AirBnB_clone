@@ -7,11 +7,11 @@ Unittests classes:
     TestBaseModel_to_dict
 """
 import os
-#import models
+import models
 import unittest
 from datetime import datetime
 from time import sleep
-#from models.base_model import BaseModel
+from models.base_model import BaseModel
 
 class TestBaseModel_instantiation(unittest.TestCase):
     """unittests for BaseModel instantion tests"""
