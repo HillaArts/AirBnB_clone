@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """Defines BaseModel class"""
-from _typeshed import SupportsReadline
 import models
 from uuid import uuid4
 from datetime import datetime
