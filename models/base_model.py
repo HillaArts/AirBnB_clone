@@ -1,49 +1,45 @@
 #!/usr/bin/python3
-"""Defines BaseModel class"""
-import models
-from uuid import uuid4
+"""
+Module for BaseModel class.
+"""
+
+import uuid
 from datetime import datetime
 
+
 class BaseModel:
-    """This represent the BaseModel for the HBnB project"""
+    """
+    BaseModel class that defines common attributes/methods for other classes.
+    """
 
     def __init__(self, *args, **kwargs):
-        """Intitializes the BaseModel
-        
-        Args:
-            *args (any): Unsused
-            **kwargs (dict): value/key pairs of attributes
-        """
-        tform = "%Y-%m-%dT%H:%M:%S.%f"
-        self.id = str(uuid4())
-        self.created_at= datetime.today()
-        self.updated_at = datetime.today()
-        if len(kwargs) != 0:
-            for i, j in kwargs.items():
-                if i == "created_at" or i == "updated_at":
-                    self.__dict__[i] = datetime.strptime(j, tform)
-                else:
-                    self.__dict__[i] = j
+        """Initialize BaseModel instance."""
+        if kwargs:
+            for key, value in kwargs.items():
+                if key == 'created_at' or key == 'updated_at':
+                    setattr(self, key, datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f"))
+                elif key != '__class__':
+                    setattr(self, key, value)
         else:
-            models.storage.new(self)
-        
-        def save(self):
-            """Updates update_at with the current datetime"""
-            self.updated_at = datetime.today()
-            models.storage.save()
+            self.id = str(uuid.uuid4())
+            self.created_at = self.updated_at = datetime.now()
 
-        def to_dict(self):
-            """Returns the dictionary of the BaseModel instance
-            
-            includes the value/keys pair __class__ representing
-            the class name of objects
-            """
-            rdict = self.__dict__.copy()
-            rdict["created_at"] = self.created_at.isoformat()
-            rdict["updated_at"] = self.updated_at.isoformat()
-            rdict["__class__"] = self.__class__.__name__
-            return rdict
-        def __str__(self):
-            """Returns the string representation of the BaseModel instance"""
-            clname = self.__class__.__name__
-            return "[{}] ({}) {}".format(clname, self.id, self.__dict__)
+    def __str__(self):
+        """Return a string representation of the object."""
+        return "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
+
+    def save(self):
+        """Update the public instance attribute updated_at with the current datetime."""
+        self.updated_at = datetime.now()
+
+    def to_dict(self):
+        """
+        Return a dictionary containing all keys/values of __dict__ of the instance.
+
+        Keys 'created_at' and 'updated_at' are converted to string objects in ISO format.
+        """
+        obj_dict = self.__dict__.copy()
+        obj_dict['__class__'] = self.__class__.__name__
+        obj_dict['created_at'] = self.created_at.isoformat()
+        obj_dict['updated_at'] = self.updated_at.isoformat()
+        return obj_dict
