@@ -17,7 +17,8 @@ class BaseModel:
         if kwargs:
             for key, value in kwargs.items():
                 if key == 'created_at' or key == 'updated_at':
-                    setattr(self, key, datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f"))
+                    setattr(self, key, datetime.strptime(value,
+                        "%Y-%m-%dT%H:%M:%S.%f"))
                 elif key != '__class__':
                     setattr(self, key, value)
         else:
@@ -26,17 +27,21 @@ class BaseModel:
 
     def __str__(self):
         """Return a string representation of the object."""
-        return "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
+        return "[{}] ({}) {}".format(self.__class__.__name__, self.id,
+                self.__dict__)
 
     def save(self):
-        """Update the public instance attribute updated_at with the current datetime."""
+        """Update the public instance attribute updated_at with the current
+        datetime."""
         self.updated_at = datetime.now()
 
     def to_dict(self):
         """
-        Return a dictionary containing all keys/values of __dict__ of the instance.
+        Return a dictionary containing all keys/values of __dict__ of the
+        instance.
 
-        Keys 'created_at' and 'updated_at' are converted to string objects in ISO format.
+        Keys 'created_at' and 'updated_at' are converted to string objects
+        in ISO format.
         """
         obj_dict = self.__dict__.copy()
         obj_dict['__class__'] = self.__class__.__name__
