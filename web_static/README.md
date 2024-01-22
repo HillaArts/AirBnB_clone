@@ -1,0 +1,1 @@
+Web static is a build up for the AirBnB clone and forms part of the front-end of the project.
