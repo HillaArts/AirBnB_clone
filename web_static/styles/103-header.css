@@ -1,0 +1,8 @@
+header {
+    background-color: #FF5A5F; /* Ensure good contrast */
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* Header media queries and additional styles */

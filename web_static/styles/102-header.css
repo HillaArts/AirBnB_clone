@@ -1,0 +1,12 @@
+header {
+    background-color: #FF5A5F;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 5px 0;
+    }
+}

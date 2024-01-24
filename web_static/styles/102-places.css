@@ -1,0 +1,19 @@
+.places {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.places article {
+    width: 390px;
+    margin: 10px;
+    border: 1px solid #FF5A5F;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .places article {
+        width: 100%;
+    }
+}

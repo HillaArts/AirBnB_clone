@@ -1,0 +1,10 @@
+.filters {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 20px 0;
+}
+
+/* Ensure text and interactive elements in filters have sufficient contrast */
+
+/* Filters media queries and additional styles */

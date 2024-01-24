@@ -1,0 +1,17 @@
+.places-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.places article {
+    width: 390px;
+    margin: 20px;
+    border: 1px solid #FF5A5F;
+    border-radius: 4px;
+    /* Other styles for article */
+}
+
+/* Continue with styles for amenities, reviews, and other elements inside each article */
+
+/* You can also add media queries for responsiveness if needed */

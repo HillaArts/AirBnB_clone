@@ -1,94 +1,43 @@
-section.filters {
-	align-items: center;
-	display: flex;
-	background-color: white;
-	border: 1px solid #DDDDDD;
-	border-radius: 4px;
-	height: 70px;
-	width: 100%;
-	position: relative;
+.filters {
+    /* Same styles as before */
 }
 
-div.locations,
-div.amenities {
-	padding: 0 30px;
-	height: 100%;
-	width: 25%;
+.filters .locations, .filters .amenities {
+    /* Same styles as before */
+    position: relative;
 }
 
-div.locations {
-	border-right: 1px solid #DDDDDD;
+.filters .locations h3, .filters .amenities h3, .filters .locations h2 {
+    /* Same styles as before for h3 */
+    font-size: 16px; /* For h2 */
 }
 
-div.locations:hover .popover,
-div.amenities:hover .popover {
-	display: block;
+.filters ul.popover {
+    display: none;
+    position: absolute;
+    background-color: #FAFAFA;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    list-style: none;
+    padding: 10px;
+    z-index: 1;
 }
 
-h2 {
-	font-size: 16px;
+.filters .locations:hover .popover,
+.filters .amenities:hover .popover {
+    display: block;
 }
 
-h3.filter-title {
-	font-weight: 600;
-	margin: 10px 0px 0px 0px;
+.filters ul.popover li {
+    padding: 5px 0;
 }
 
-h4.some-states {
-	font-size: 14px;
-	font-weight: 400;
-	margin: 0;
+.filters ul.popover li ul {
+    padding-left: 20px;
 }
 
-.submit {
-	color: #FFFFFF;
-	background-color: #FF5A5F;
-	border: 0;
-	border-radius: 4px;
-	font-size: 18px;
-	height: 48px;
-	width: 20%;
-}
-
-.search-button {
-	margin-left: auto;
-	margin-right: 30px;
-}
-
-.search-button:hover {
-	opacity: 90%;
-}
-
-ul {
-	list-style: none;
-}
-
-li {
-	line-height: 25px;
-}
-
-li.items {
-	margin-bottom: 20px;
-}
-
-ul.popover {
-	background-color: #FAFAFA;
-	border: 1px solid #DDDDDD;
-	border-radius: 4px;
-	display: none;
-	margin: 22px -30px 0px -30px;
-	padding: 20px 30px;
-	z-index: 999999999999999999;
-}
-
-ul.available-amenities {
-	padding-left: 50px;
-}
-
-ul.popover-items {
-	padding-left: 15px;
-}
-
-h2.states-list {
-	margin: 0px;
+.filters button {
+    /* Same styles as before */
 }

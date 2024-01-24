@@ -1,0 +1,8 @@
+footer {
+    background-color: #333; /* Ensure good contrast */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Footer media queries and additional styles */

@@ -1,0 +1,12 @@
+.filters {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 20px 0;
+}
+
+@media (max-width: 768px) {
+    .filters {
+        flex-direction: column;
+    }
+}

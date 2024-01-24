@@ -1,15 +1,17 @@
 header {
-    color: white;
+    background-color: white;
     height: 70px;
     width: 100%;
     border-bottom: 1px solid #CCCCCC;
     display: flex;
+    align-items: center;
 }
-.logo {
-    background-image: url(images/logo.png);
-    background-repeat: no-repeat, repeat;
-    background-origin: content-box;
-    padding-left: 20px;
-    height: 60px;
-    width: 142px;
+
+.header .logo {
+    background-image: url('../images/logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 50px; /* Adjust as per your logo's aspect ratio */
+    margin-left: 20px;
 }
